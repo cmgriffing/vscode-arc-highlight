@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Architect",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#identifiers"
+    },
+    {
+      "include": "#urls"
+    },
+    {
+      "include": "#url-params"
+    },
+    {
+      "include": "#key-types"
+    },
+    {
+      "include": "#http-methods"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "urls": {
+      "name": "support.type.arc",
+      "match": "(?<!src.*)(\\/[\\w\\/]+)"
+    },
+    "url-params": {
+      "name": "variable.parameter.arc",
+      "match": "(:[a-zA-Z]*)"
+    },
+    "http-methods": {
+      "name": "entity.name.function.arc",
+      "match": "(?<=method )(get|post|put|delete|patch|GET|POST|PUT|DELETE|PATCH)\\s+"
+    },
+    "key-types": {
+      "name": "support.type.arc",
+      "match": "\\s(\\*+[a-zA-Z]*)\\b"
+    },
+
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.directive.arc",
+          "match": "^(@.*)"
+        },
+        {
+          "name": "keyword.method.arc",
+          "match": "\\s(method|src|name)\\s"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.arc",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.arc",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.arc"
+}
